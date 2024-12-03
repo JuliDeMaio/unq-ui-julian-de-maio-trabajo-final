@@ -1,3 +1,8 @@
+@import "board.css";
+@import "card.css";
+@import "homescreen.css";
+@import "playscreen.css";
+
 body {
     margin: 0;
     padding: 0;
