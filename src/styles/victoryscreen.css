@@ -1,0 +1,50 @@
+.victory-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f8ff;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.victory-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  animation: bounceIn 1s;
+}
+
+.victory-message {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 2rem;
+}
+
+.victory-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.victory-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.play-again {
+  background-color: #28a745;
+}
+
+.go-home {
+  background-color: #007bff;
+}
+
+.victory-btn:hover {
+  transform: scale(1.1);
+}
