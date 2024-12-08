@@ -18,7 +18,6 @@ const HomeScreen = () => {
       <h3 className='size-text'>Seleccioná la dificultad que querés jugar:</h3>
       <div className="board-size-buttons">
         <button className="play-button" onClick={() => handlePlayClick(4)}>Cebollita</button>
-        <button className="play-button" onClick={() => handlePlayClick(5)}>Campeón Sub-20</button>
         <button className="play-button" onClick={() => handlePlayClick(6)}>Campeón del mundo</button>
       </div>
       <img className='img-signature' src={maradonaSignature}/>  

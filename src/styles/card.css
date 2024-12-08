@@ -1,6 +1,7 @@
 .card {
     position: relative;
     cursor: pointer;
+    width: 100%; /* Ocupa todo el espacio disponible */
 }
 
 .card img {

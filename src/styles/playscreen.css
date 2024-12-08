@@ -1,43 +1,14 @@
 .gamescreen-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background-color: white;
-    padding: 30px;
-    box-sizing: border-box;
+    padding: 25px;
     border: 5px solid black;
   }
   
-  .gamescreen-title {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
   .game-footer {
-    margin-top: 20px;
     text-align: center;
   }
   
   .game-footer-points {
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  .button-playagain {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button-playagain:hover {
-    background-color: #45a049;
+    font-size: 20px;
+    color: black;
   }

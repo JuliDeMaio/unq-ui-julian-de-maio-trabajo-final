@@ -1,9 +1,0 @@
-.cards-container {
-    display: grid;
-    width: 30em;
-    height: 40em;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-    background-color: #FFFFFF;
-    max-width: 100em;
-  }
