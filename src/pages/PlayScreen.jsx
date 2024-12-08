@@ -5,8 +5,9 @@ import VictoryScreen from '../components/VictoryScreen'
 import Board from '../components/Board'
 
 const PlayScreen = () => {
-  const amountOfCards = (amount) => (amount ? amount : { uniqueCards: 8 })
-  const { uniqueCards } = amountOfCards(useLocation().state)
+  const { state } = useLocation();
+  const boardSize = state?.size || 4;
+  const uniqueCards = (boardSize * boardSize) / 2;
 
   const [looks, setLooks] = useState([]);
   const [selectedCard, setSelectedCard] = useState({})
