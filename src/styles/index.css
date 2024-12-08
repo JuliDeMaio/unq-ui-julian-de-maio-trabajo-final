@@ -2,30 +2,15 @@
 @import "card.css";
 @import "homescreen.css";
 @import "playscreen.css";
+@import "victoryscreen.css";
+
 
 body {
     background-image: url(../assets/backgrounds/background-argentina.png);
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-
-  h1 {
-    color: #333;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-
-  button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
   }

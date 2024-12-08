@@ -21,9 +21,7 @@ const HomeScreen = () => {
         <button className="play-button" onClick={() => handlePlayClick(5)}>Campeón Sub-20</button>
         <button className="play-button" onClick={() => handlePlayClick(6)}>Campeón del mundo</button>
       </div>
-      <div>
-        <img className='img-signature' src={maradonaSignature}/>
-      </div>    
+      <img className='img-signature' src={maradonaSignature}/>  
     </div>
   );
 };

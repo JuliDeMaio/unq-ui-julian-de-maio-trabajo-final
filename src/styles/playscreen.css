@@ -3,10 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-    padding: 20px;
+    background-color: white;
+    padding: 30px;
     box-sizing: border-box;
+    border: 5px solid black;
   }
   
   .gamescreen-title {
