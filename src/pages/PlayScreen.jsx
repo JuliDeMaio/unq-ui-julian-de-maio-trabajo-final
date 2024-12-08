@@ -86,9 +86,9 @@ const PlayScreen = () => {
       ) : (
         <>
           <div className="game-footer">
-            <p className="game-footer-points">Puntos: {points}</p>
-            <p className="game-footer-attempts">Intentos: {attempts}</p>
-            <p className="game-footer-highscore">Mejor puntuación: {highestScore}</p>
+            <p className="game-footer-points">Puntos: {points} 🟢</p>
+            <p className="game-footer-points">Intentos: {attempts} 🔴</p>
+            <p className="game-footer-points">Mejor puntuación: {highestScore} 🏆</p>
           </div>
           <Board
             cards={looks}
