@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import looksdiego from '../assets/images/looksDiego'
-import VictoryScreen from '../components/VictoryScreen'
+import VictoryPanel from '../components/VictoryPanel'
 import Board from '../components/Board'
 
 const PlayScreen = () => {
@@ -82,7 +82,7 @@ const PlayScreen = () => {
   return (
     <div className="gamescreen-container">
       {isWinner ? (
-        <VictoryScreen resetGame={resetGame} points={points} attempts={attempts} highestScore={highestScore} />
+        <VictoryPanel resetGame={resetGame} points={points} attempts={attempts} highestScore={highestScore} />
       ) : (
         <>
           <div className="game-footer">
