@@ -1,7 +1,7 @@
 .card {
     position: relative;
     cursor: pointer;
-    width: 100%; /* Ocupa todo el espacio disponible */
+    width: 100%;
 }
 
 .card img {
@@ -29,4 +29,10 @@
 
 .card img.not-discovered:hover {
     transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+    .card img {
+      height: auto;
+    }
 }

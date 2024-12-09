@@ -5,18 +5,18 @@ import VictoryScreen from '../components/VictoryScreen'
 import Board from '../components/Board'
 
 const PlayScreen = () => {
-  const { state } = useLocation();
-  const boardSize = state?.size || 4;
-  const uniqueCards = (boardSize * boardSize) / 2;
+  const { state } = useLocation()
+  const boardSize = state?.size || 4
+  const uniqueCards = (boardSize * boardSize) / 2
 
   const [looks, setLooks] = useState([]);
   const [selectedCard, setSelectedCard] = useState({})
   const [cardsToReset, setCardsToReset] = useState([])
-  const [points, setPoints] = useState(0);
-  const [attempts, setAttempts] = useState(0); // Contador de intentos
-  const [highestScore, setHighestScore] = useState(0); // Puntaje más alto
+  const [points, setPoints] = useState(0)
+  const [attempts, setAttempts] = useState(0)
+  const [highestScore, setHighestScore] = useState(0)
   const [disableCards, setDisableCards] = useState(false)
-  const [matchedPairs, setMatchedPairs] = useState(0); // Estado para contar los pares encontrados
+  const [matchedPairs, setMatchedPairs] = useState(0)
   const [isWinner, setIsWinner] = useState(false)
 
   const randomizeArray = (anArray) => {
@@ -36,7 +36,7 @@ const PlayScreen = () => {
 
   const checkIfIsWinner = () => {
     if (matchedPairs === uniqueCards-1) {
-      setIsWinner(true); // Si todos los pares están encontrados, el jugador gana
+      setIsWinner(true);
     }
   };
 
@@ -47,15 +47,15 @@ const PlayScreen = () => {
 
   const checkIfMatch = (name, number) => {
     setDisableCards(true);
-    setAttempts((prev) => prev + 1); // Incrementar intentos
+    setAttempts((prev) => prev + 1)
     if (selectedCard.name === name) {
-      setPoints((prevPoints) => prevPoints + 20); // +20 puntos por acierto
-      setMatchedPairs((prev) => prev + 1); // Incrementar el contador de pares encontrados
+      setPoints((prevPoints) => prevPoints + 20);
+      setMatchedPairs((prev) => prev + 1);
       checkIfIsWinner()
       resetCards()
     } else {
       setTimeout(() => {
-        setPoints((prevPoints) => prevPoints - 4); // -4 puntos por fallo
+        setPoints((prevPoints) => prevPoints - 4);
         setCardsToReset([selectedCard.number, number]);
         resetCards()
       }, 1000)
@@ -69,12 +69,12 @@ const PlayScreen = () => {
   const resetGame = () => {
     if (points > highestScore) {
       setHighestScore(points);
-      localStorage.setItem('highestScore', points); // Guardar en localStorage
+      localStorage.setItem('highestScore', points)
     }
     resetCards()
-    setMatchedPairs(0); // Reiniciar el contador de pares encontrados
+    setMatchedPairs(0)
     setPoints(0)
-    setAttempts(0);
+    setAttempts(0)
     setIsWinner(false)
     setCardsToReset(Array(uniqueCards * 2).fill().map((_, idx) => idx));
   }
