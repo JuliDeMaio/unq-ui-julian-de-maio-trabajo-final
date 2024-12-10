@@ -19,6 +19,10 @@ const PlayScreen = () => {
   const [matchedPairs, setMatchedPairs] = useState(0)
   const [isWinner, setIsWinner] = useState(false)
 
+  const difficulty = boardSize === 4 ? 'cebollita' : 'clasemundial';
+
+  const getHighscoreKey = () => `highestScore_${difficulty}`;
+
   const randomizeArray = (anArray) => {
     for (let i = anArray.length - 1; i > 0; i--) {
       const j = Math.floor((i + 1) * Math.random());
@@ -30,9 +34,11 @@ const PlayScreen = () => {
   useEffect(() => {
     const looksToRandomize = looksdiego.slice(0, uniqueCards);
     setLooks(randomizeArray(looksToRandomize.concat(looksToRandomize)));
-    const storedHighestScore = localStorage.getItem('highestScore');
+
+    const storedHighestScore = localStorage.getItem(getHighscoreKey());
+
     if (storedHighestScore) setHighestScore(parseInt(storedHighestScore));
-  }, [uniqueCards]);
+  }, [uniqueCards, difficulty]);
 
   const checkIfIsWinner = () => {
     if (matchedPairs === uniqueCards-1) {
@@ -67,22 +73,25 @@ const PlayScreen = () => {
   }
 
   const resetGame = () => {
+    const highscoreKey = getHighscoreKey();
+
     if (points > highestScore) {
+      localStorage.setItem(highscoreKey, points);
       setHighestScore(points);
-      localStorage.setItem('highestScore', points)
     }
+
     resetCards()
     setMatchedPairs(0)
     setPoints(0)
     setAttempts(0)
     setIsWinner(false)
-    setCardsToReset(Array(uniqueCards * 2).fill().map((_, idx) => idx));
+    setCardsToReset(Array(uniqueCards * 2).fill().map((_, index) => index));
   }
 
   return (
     <div className="gamescreen-container">
       {isWinner ? (
-        <VictoryPanel resetGame={resetGame} points={points} attempts={attempts} highestScore={highestScore} />
+        <VictoryPanel resetGame={resetGame} points={points} difficulty={difficulty} highestScore={highestScore} />
       ) : (
         <>
           <div className="game-footer">
