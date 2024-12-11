@@ -32,13 +32,17 @@ const PlayScreen = () => {
   }
 
   useEffect(() => {
+    initializeGame();
+  }, [uniqueCards, difficulty]);
+  
+  const initializeGame = () => {
     const looksToRandomize = looksdiego.slice(0, uniqueCards);
-    setLooks(randomizeArray(looksToRandomize.concat(looksToRandomize)));
+    const shuffledCards = randomizeArray(looksToRandomize.concat(looksToRandomize));
+    setLooks(shuffledCards);
 
     const storedHighestScore = localStorage.getItem(getHighscoreKey());
-
     if (storedHighestScore) setHighestScore(parseInt(storedHighestScore));
-  }, [uniqueCards, difficulty]);
+  };
 
   const checkIfIsWinner = () => {
     if (matchedPairs === uniqueCards-1) {
@@ -86,6 +90,7 @@ const PlayScreen = () => {
     setAttempts(0)
     setIsWinner(false)
     setCardsToReset(Array(uniqueCards * 2).fill().map((_, index) => index));
+    initializeGame();
   }
 
   return (
